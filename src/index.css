@@ -1,0 +1,615 @@
+/* ============================================================
+   Billet Design — design tokens
+   Structure mirrors the reference system: cream paper, one ink hue,
+   hairline grid, 7px radius, single font weight (400) with optical
+   tracking on display sizes.
+   ============================================================ */
+:root {
+  /* --- surface (Billet's own hues, same lightness relationships) --- */
+  --color-paper: oklch(95.6% 0.012 85);
+  --color-paper-50: oklch(98.3% 0.006 85);
+  --color-paper-100: oklch(95.6% 0.012 85);
+  --color-paper-150: oklch(92.7% 0.014 85);
+  --color-paper-200: oklch(88.9% 0.012 85);
+  --color-paper-300: oklch(87.3% 0.014 85);
+  --color-paper-400: oklch(76.4% 0.016 85);
+  --color-paper-500: oklch(66% 0.014 85);
+  --color-paper-600: oklch(51.8% 0.01 85);
+  --color-paper-700: oklch(40.3% 0.008 85);
+  --color-paper-800: oklch(30.5% 0.008 85);
+  --color-paper-900: oklch(24% 0.006 85);
+
+  /* ink: cool graphite, the machined-alloy direction */
+  --color-ink-100: oklch(97% 0.004 240);
+  --color-ink-300: oklch(72.4% 0.012 240);
+  --color-ink-500: oklch(52% 0.012 240);
+  --color-ink-700: oklch(40% 0.014 240);
+  --color-ink-800: oklch(28.7% 0.016 240);
+  --color-ink-850: oklch(25.5% 0.014 240);
+  --color-ink-900: oklch(22% 0.012 240);
+
+  /* brass accent */
+  --color-brass: oklch(84% 0.125 76);
+  --color-brass-600: oklch(68% 0.14 66);
+  --color-rust: oklch(56% 0.16 40);
+
+  /* verdigris: the patina direction, used for hover states */
+  --color-verdigris-500: oklch(66% 0.07 175);
+  --color-verdigris-600: oklch(54% 0.075 175);
+
+  /* --- semantic --- */
+  --background: var(--color-paper);
+  --background-50: var(--color-paper-50);
+  --foreground: var(--color-ink-800);
+  --muted-foreground: var(--color-paper-600);
+  --faint-foreground: var(--color-paper-500);
+  --border: var(--color-ink-300);
+  --grid-line: var(--color-paper-150);
+  --grid-line-bold: var(--color-paper-500);
+  --popover: var(--color-paper-300);
+  --primary: var(--color-ink-850);
+  --primary-foreground: var(--color-paper-150);
+  --secondary: var(--color-brass);
+  --secondary-foreground: var(--color-ink-800);
+  --destructive: var(--color-rust);
+  --surface-dark: var(--color-ink-850);
+  --surface-dark-fg: var(--color-paper);
+  --accent: var(--color-verdigris-600);
+
+  --radius: 0.4375rem;
+  --radius-md: 0.4375rem;
+  --radius-sm: 0.25rem;
+  --radius-xs: 0.3rem;
+
+  /* --- type --- */
+  --font-display: 'Inter Tight', system-ui, sans-serif;
+  /* the reference sets the carousel word and slide title in a serif display */
+  --font-display-serif: 'Instrument Serif', Georgia, serif;
+  /* and swaps category names to this face on hover */
+  --font-alter: 'Bricolage Grotesque', system-ui, sans-serif;
+  --font-text: 'Inter', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+
+  --fs-huge: clamp(3.5rem, 4.5vw + 3.5rem, 7.5rem);
+  --lh-huge: clamp(60px, 3vw + 58px, 120px);
+  --trk-huge: clamp(-2.8px, -0.5vw, -3.6px);
+  --ml-huge: clamp(-3px, -0.5vw, -7px);
+
+  --fs-massive: clamp(5rem, 2vw + 4rem, 10rem);
+  --trk-massive: clamp(-1.6px, -0.4vw, -4.8px);
+  --ml-massive: clamp(-3px, -0.6vw, -9px);
+
+  --fs-h1: clamp(3rem, 3.3333vw + 2.3333rem, 5rem);
+  --lh-h1: 1.1;
+  --trk-h1: clamp(-1.44px, -0.3vw, -2.4px);
+  --ml-h1: clamp(-2px, -0.3vw, -5px);
+
+  --fs-h2: clamp(2rem, 3.3333vw + 1.3333rem, 4rem);
+  --lh-h2: 1.15;
+  --trk-h2: clamp(-0.8px, -0.2vw, -1.28px);
+  --ml-h2: clamp(-1px, -0.2vw, -3px);
+
+  --fs-h3: clamp(1.625rem, 2.2917vw + 1.1667rem, 3rem);
+  --lh-h3: 1.15;
+  --trk-h3: clamp(-0.32px, -0.05vw, -0.48px);
+
+  --fs-h4: clamp(1.5rem, 0.8333vw + 1.3333rem, 2rem);
+  --lh-h4: 1.14;
+  --trk-h4: clamp(-0.24px, -0.05vw, -0.32px);
+
+  --fs-h5: clamp(1.4rem, 0.3vw + 1rem, 1.5rem);
+  --lh-h5: 1.2;
+
+  --fs-h6: clamp(1.125rem, 0.2vw + 1rem, 1.25rem);
+  --lh-h6: 1;
+
+  --fs-body: clamp(0.9rem, 0.4167vw + 0.9167rem, 0.98rem);
+  --fs-small: clamp(0.825rem, 0.2917vw + 0.7667rem, 0.875rem);
+
+  --tracking-tight: -0.025em;
+  --tracking-wide: 0.025em;
+  --tracking-widest: 0.1em;
+
+  /* --- layout --- */
+  --container: 90rem;
+  --container-narrow: 80rem;
+  --pad-inline: clamp(1.5rem, 4vw, 2.5rem);
+  --tile: 72px;
+  --header-h: 3.5rem;
+
+  --section: clamp(4rem, 8vw, 9rem);
+
+  /* --- motion --- */
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --dur: 0.3s;
+  --dur-fast: 0.15s;
+  --dur-slow: 0.7s;
+}
+
+/* ============================================================
+   reset
+   ============================================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-text);
+  font-size: var(--fs-body);
+  font-weight: 400;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+img,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+  color: inherit;
+  font-weight: 400;
+}
+
+button {
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+}
+
+fieldset:disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+::selection {
+  background: var(--foreground);
+  color: var(--background);
+}
+
+:focus-visible {
+  outline: 2px solid var(--foreground);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ============================================================
+   type utilities
+   ============================================================ */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+  text-wrap: pretty;
+}
+
+.t-huge {
+  font-family: var(--font-display);
+  font-size: var(--fs-huge);
+  font-weight: 300;
+  line-height: var(--lh-huge);
+  letter-spacing: var(--trk-huge);
+  margin-left: var(--ml-huge);
+}
+
+.t-massive {
+  font-family: var(--font-display);
+  font-size: var(--fs-massive);
+  font-weight: 300;
+  line-height: 1.2;
+  letter-spacing: var(--trk-massive);
+  margin-left: var(--ml-massive);
+}
+
+.t-h1 {
+  font-family: var(--font-display);
+  font-size: var(--fs-h1);
+  font-weight: 300;
+  line-height: var(--lh-h1);
+  letter-spacing: var(--trk-h1);
+  margin-left: var(--ml-h1);
+}
+
+.t-h2 {
+  font-family: var(--font-display);
+  font-size: var(--fs-h2);
+  font-weight: 300;
+  line-height: var(--lh-h2);
+  letter-spacing: var(--trk-h2);
+  margin-left: var(--ml-h2);
+}
+
+.t-h3 {
+  font-family: var(--font-display);
+  font-size: var(--fs-h3);
+  font-weight: 400;
+  line-height: var(--lh-h3);
+  letter-spacing: var(--trk-h3);
+}
+
+.t-h4 {
+  font-family: var(--font-display);
+  font-size: var(--fs-h4);
+  font-weight: 400;
+  line-height: var(--lh-h4);
+  letter-spacing: var(--trk-h4);
+}
+
+.t-h5 {
+  font-family: var(--font-text);
+  font-size: var(--fs-h5);
+  font-weight: 400;
+  line-height: var(--lh-h5);
+}
+
+.t-h6 {
+  font-family: var(--font-display);
+  font-size: var(--fs-h6);
+  font-weight: 400;
+  line-height: var(--lh-h6);
+}
+
+.t-small-accent {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.25;
+  letter-spacing: -0.28px;
+}
+
+.t-accent {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: clamp(-0.0173rem, -0.02vw, -0.0185rem);
+}
+
+.t-tiny {
+  font-family: var(--font-mono);
+  font-size: clamp(0.625rem, 0.2083vw + 0.5833rem, 0.75rem);
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: clamp(-0.0163rem, -0.02vw, -0.0175rem);
+}
+
+.t-small {
+  font-family: var(--font-display);
+  font-size: var(--fs-small);
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.t-warm {
+  font-family: var(--font-text);
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.t-wide {
+  letter-spacing: var(--tracking-wide);
+}
+
+.t-center {
+  text-align: center;
+}
+
+/* ============================================================
+   layout
+   ============================================================ */
+.container {
+  max-width: var(--container);
+  padding-inline: var(--pad-inline);
+  margin-inline: auto;
+}
+
+.container-narrow {
+  max-width: var(--container-narrow);
+  margin-inline: auto;
+}
+
+/* reference alias: the full 90rem measure used by most sections */
+.container-max-width {
+  max-width: var(--container);
+  padding-inline: var(--pad-inline);
+  margin-inline: auto;
+}
+
+.section {
+  position: relative;
+  padding-block: var(--section);
+}
+
+/* 72px hairline layout grid — signature of the reference system */
+.grid-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+  background-size: var(--tile) var(--tile);
+  background-position: 0 0;
+  background-repeat: repeat;
+}
+
+.section > .container {
+  position: relative;
+  z-index: 1;
+}
+
+.skip-link {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 200;
+  padding: 0.7rem 1.1rem;
+  background: var(--foreground);
+  color: var(--background);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  line-height: 1;
+  transform: translateY(-200%);
+  transition: transform var(--dur-fast) var(--ease);
+}
+
+.skip-link:focus-visible {
+  transform: none;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.text-muted {
+  color: var(--muted-foreground);
+}
+
+.t-muted {
+  color: var(--muted-foreground);
+}
+
+/* ============================================================
+   buttons — 5px radius, text face, -0.025em tracking
+   ============================================================ */
+.btn {
+  position: relative;
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75em;
+  border-radius: calc(var(--radius) - 2px);
+  font-family: var(--font-display-serif);
+  letter-spacing: var(--tracking-tight);
+  white-space: nowrap;
+  cursor: pointer;
+  overflow: hidden;
+  isolation: isolate;
+  transition: all var(--dur) var(--ease-out);
+}
+
+.btn-md {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  padding-block: 0.675rem;
+  padding-inline: 1.5rem;
+}
+
+.btn-lg {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  padding-block: 1rem;
+  padding-inline: 1.75rem;
+}
+
+.btn-sm {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  padding-block: 0.5rem;
+  padding-inline: 1rem;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+  border: 1px solid transparent;
+}
+
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--secondary);
+  transform: translateY(101%);
+  transition: transform var(--dur) var(--ease-out);
+}
+
+.btn-primary:hover::after,
+.btn-primary:focus-visible::after {
+  transform: translateY(74%);
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
+.btn-secondary {
+  background-color: var(--secondary);
+  color: var(--secondary-foreground);
+  border: 1px solid transparent;
+}
+
+.btn-secondary:hover {
+  opacity: 0.9;
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--foreground);
+  border: 1px solid var(--color-paper-400);
+}
+
+.btn-outline:hover {
+  background-color: transparent;
+  border-color: var(--foreground);
+}
+
+.btn-outline-light {
+  background-color: transparent;
+  color: var(--color-paper-150);
+  border: 1px solid var(--color-paper-150);
+}
+
+.btn-outline-light:hover {
+  background-color: transparent;
+  border-color: var(--color-paper-100);
+  color: var(--color-paper-100);
+}
+
+.btn-muted {
+  background-color: var(--color-paper-150);
+  color: var(--color-ink-700);
+  border: 1px solid transparent;
+}
+
+.btn-link {
+  background: none;
+  border: 1px solid transparent;
+  color: var(--foreground);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* small pill used for tags and filters */
+.btn-pill {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  border: 1px solid var(--color-paper-400);
+  background: transparent;
+  padding-inline: 1rem;
+  padding-block: 0.25rem;
+  font-family: var(--font-mono);
+  font-size: clamp(0.625rem, 0.2083vw + 0.5833rem, 0.75rem);
+  line-height: 1.6;
+  letter-spacing: clamp(-0.0163rem, -0.02vw, -0.0175rem);
+  color: var(--foreground);
+}
+
+.btn-icon-end svg,
+.btn-icon-start svg {
+  flex-shrink: 0;
+}
+
+.btn-icon-end:hover svg {
+  animation: nudge 0.5s var(--ease-out);
+}
+
+@keyframes nudge {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-15%);
+  }
+  50% {
+    transform: translateX(0);
+  }
+  75% {
+    transform: translateX(15%);
+  }
+}
+
+/* ============================================================
+   link + tag primitives
+   ============================================================ */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.4em 0.85em;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  line-height: 1.2;
+  color: var(--foreground);
+  transition: background var(--dur-fast) var(--ease), color var(--dur-fast) var(--ease);
+}
+
+a.tag:hover {
+  background: var(--foreground);
+  color: var(--background);
+}
+
+.tag i {
+  width: 0.6em;
+  height: 0.6em;
+  border-radius: 50%;
+  background: var(--sw, var(--faint-foreground));
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.25);
+}
+
+.arrow {
+  flex-shrink: 0;
+}
