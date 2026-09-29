@@ -447,9 +447,10 @@
   white-space: nowrap;
   overflow: hidden;
   margin-left: calc(-1 * var(--radius-md));
-  padding-inline: clamp(1rem, 1.5vw, 1.5rem);
-  font-size: clamp(0.875rem, 1vw, 1rem);
-  line-height: clamp(1rem, 1.5vw, 1.25rem);
+  padding-block: 0.75rem;
+  padding-inline: clamp(1.25rem, 1.6vw, 1.75rem);
+  font-size: clamp(1rem, 1.05vw, 1.125rem);
+  line-height: clamp(1.25rem, 1.5vw, 1.5rem);
   transition: background var(--dur) var(--ease-out), color var(--dur) var(--ease-out);
 }
 
@@ -760,7 +761,7 @@
    scale 0.4 and dropped 20%, whole spread 2.4 frame-widths.
    ============================================================ */
 .section-stage {
-  --frame: 22.5rem;
+  --frame: min(22.5rem, 78vw);
   padding-block: clamp(3.5rem, 8vw, 8.75rem) clamp(2.5rem, 3vw, 5rem);
   overflow: hidden;
 }
@@ -1525,12 +1526,19 @@
   align-items: center;
 }
 
+.section-media-start .media-copy-inner {
+  align-items: flex-start;
+}
+
 .media-eyebrow {
   opacity: 0.7;
 }
 
 .media-heading {
   color: inherit;
+  font-size: clamp(1.9rem, 2.5vw, 2.5rem);
+  line-height: 1.12;
+  letter-spacing: -0.025em;
 }
 
 .media-body {
@@ -2100,6 +2108,8 @@
   justify-content: space-between;
   height: 100%;
   gap: 1rem;
+  margin: 0;
+  width: 100%;
 }
 
 .drawer__nav {

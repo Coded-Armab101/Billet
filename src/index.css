@@ -472,25 +472,15 @@ h6 {
   background-color: var(--primary);
   color: var(--primary-foreground);
   border: 1px solid transparent;
+  background-image: linear-gradient(var(--secondary), var(--secondary));
+  background-repeat: no-repeat;
+  background-size: 100% 0%;
+  background-position: 0 100%;
 }
 
-.btn-primary::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background: var(--secondary);
-  transform: translateY(101%);
-  transition: transform var(--dur) var(--ease-out);
-}
-
-.btn-primary:hover::after,
-.btn-primary:focus-visible::after {
-  transform: translateY(74%);
-}
-
-.btn-primary:hover {
-  opacity: 0.9;
+.btn-primary:hover,
+.btn-primary:focus-visible {
+  background-size: 100% 46%;
 }
 
 .btn-secondary {
@@ -554,6 +544,15 @@ h6 {
   line-height: 1.6;
   letter-spacing: clamp(-0.0163rem, -0.02vw, -0.0175rem);
   color: var(--foreground);
+  transition:
+    background-color var(--dur) var(--ease-out),
+    border-color var(--dur) var(--ease-out),
+    color var(--dur) var(--ease-out);
+}
+
+.btn-pill:hover {
+  border-color: var(--foreground);
+  background-color: var(--color-paper-150);
 }
 
 .btn-icon-end svg,

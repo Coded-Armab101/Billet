@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 
 const SIZES = {
   '21 / 9': '2400 × 1030',
@@ -20,10 +20,25 @@ const SIZES = {
  * Image slot. Renders the real asset when it exists in /public,
  * otherwise a labelled art-direction placeholder naming the exact
  * file to drop in. Drop the file in and it swaps automatically.
+ * A transient load failure retries once before falling back, so
+ * a network blip doesn't blank the image out.
  */
 export default function Slot({ src, alt = '', ratio = '4 / 3', fit, fill = false, className = '' }) {
   const [failed, setFailed] = useState(false)
+  const retried = useRef(false)
   const label = src.replace(/^\/images\//, '').replace(/\.[a-z0-9]+$/i, '')
+
+  const onError = (e) => {
+    if (retried.current) {
+      setFailed(true)
+      return
+    }
+    retried.current = true
+    const img = e.currentTarget
+    window.setTimeout(() => {
+      img.src = src
+    }, 900)
+  }
 
   return (
     <div
@@ -37,7 +52,7 @@ export default function Slot({ src, alt = '', ratio = '4 / 3', fit, fill = false
           alt={alt}
           loading="lazy"
           decoding="async"
-          onError={() => setFailed(true)}
+          onError={onError}
         />
       )}
 
