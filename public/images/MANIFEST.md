@@ -17,15 +17,14 @@ Each homepage section now pulls its exact counterpart from the reference site:
 | Featured — Overture 98% | `prologue-{black_sesame-obsc-front, classic_oak-mtry-front, golden_beige-mtry-front, dark_mushroom-cacao-front}.webp` | 5:4 |
 | Featured — Cadenza 75% | `encore-{monterey_dune-mtry-front, matcha_cream-lotus-side, mocha_mushroom-cacao-side, monterey_dune-mtry-side}.webp` | 5:4 / 3:2 |
 | Featured — Interlude 65% | `sonnet-{black_sesame-obsc-front, forest_mocha-cacao-front, golden_beige-mtry-front, studio_light-anth-front}.webp` | 3:2 |
-| Keyboard stage (carsousel) | interlude → `sonnet-golden_beige-mtry-front`, cadenza → `encore-monterey_dune-mtry-front`, overture → `prologue-black_sesame-obsc-front`, 40 series → `encore-matcha_cream-lotus-side` | 1:1 frame |
-| Editorial detail | `encore-top-partial.png` | 16:9 |
-| Editorial lead | `sonnet-golden_beige-lifestyle-3_1_…png` | 16:10 |
-| Editorial portrait | `encore-matcha_cream-lotus-side.webp` | 5:4 |
-| Community banner | `team-adobe-max-wide.png` | 16:9 |
+| Keyboard stage (carsousel) | interlude → `onek.webp`, cadenza → `twok.webp`, overture → `threek.webp` (local), 40 series → `encore-matcha_cream-lotus-side` | 1:1 frame |
+| Editorial detail (last) | `keyshow.webp` (local, transparent) | 16:9 |
+| Editorial lead (middle) | `sonnet-golden_beige-lifestyle-3_1_…png` | 16:10 |
+| Editorial portrait (first) | `keydraw.webp` (local, transparent) | 5:4 |
 | Tape marquee | `community-{1,3,4,6}.png` (cycled) | 4:3 |
 | Team band | `our-team.png` | 16:9 |
 | Categories | `COPPER_0176-Edit.jpg`, `lotus-keycap-closeup.png`, `anthracite-switch-pile.jpg`, `encore-s2-collection.png` | 3:4 |
-| Build band | `CMF_Chip-2.png` | 3:2 (16:9 band) |
+| Build band | `startbuilding.webp` (local) | 16:9 |
 | Footer dither | `footer-dithered-keyboard.png` | 9.64:1 |
 | Submenu previews | board fronts + `header-keycaps-{lotus,anthracite,obscura}.png` | landscape |
 

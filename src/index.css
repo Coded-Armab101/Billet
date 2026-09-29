@@ -31,6 +31,7 @@
   /* brass accent */
   --color-brass: oklch(84% 0.125 76);
   --color-brass-600: oklch(68% 0.14 66);
+  --color-brass-900: oklch(33.9% 0.0503 151);
   --color-rust: oklch(56% 0.16 40);
 
   /* verdigris: the patina direction, used for hover states */
@@ -47,7 +48,7 @@
   --grid-line: var(--color-paper-150);
   --grid-line-bold: var(--color-paper-500);
   --popover: var(--color-paper-300);
-  --primary: var(--color-ink-850);
+  --primary: var(--color-brass-900);
   --primary-foreground: var(--color-paper-150);
   --secondary: var(--color-brass);
   --secondary-foreground: var(--color-ink-800);

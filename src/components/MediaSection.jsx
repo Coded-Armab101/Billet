@@ -1,5 +1,17 @@
 import Slot from './Slot.jsx'
 
+const ArrowIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="arrow" aria-hidden="true">
+    <path
+      d="M4 12h15M13 6l6 6-6 6"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+)
+
 /**
  * Full-bleed media band: a 16:9 image with a tinted overlay, and copy laid
  * over it. Matches the reference's shared custom-section pattern, so Team and
@@ -30,8 +42,9 @@ export default function MediaSection({
             <h2 className="t-h1 media-heading">{heading}</h2>
             <p className="media-body">{body}</p>
             {cta && (
-              <a className="btn btn-pill" href={cta.href}>
+              <a className="btn btn-primary btn-md btn-icon-end" href={cta.href}>
                 {cta.label}
+                <ArrowIcon />
               </a>
             )}
           </div>

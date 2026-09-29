@@ -20,6 +20,7 @@ function Block({ block }) {
       ]
         .filter(Boolean)
         .join(' ')}
+      data-block={block.id}
       style={{
         '--desktop-grid-column': block.desktop.column,
         '--desktop-grid-row': block.desktop.row,

@@ -111,7 +111,7 @@ export const carousel = {
       title: 'Interlude 65%',
       subtitle: 'The desk essential. No numpad, no filler keys, nothing between you and the work.',
       buttonCaption: 'Ships in 3 days',
-      src: cdn('sonnet-golden_beige-mtry-front.webp', 1200),
+      src: '/images/onek.webp',
     },
     {
       id: 'cadenza',
@@ -119,7 +119,7 @@ export const carousel = {
       title: 'Cadenza 75%',
       subtitle: 'Function row and a full-width knob, for people who work in timelines and mixers.',
       buttonCaption: 'Ships in 3 days',
-      src: cdn('encore-monterey_dune-mtry-front.webp', 1200),
+      src: '/images/twok.webp',
     },
     {
       id: 'overture',
@@ -127,7 +127,7 @@ export const carousel = {
       title: 'Overture 98%',
       subtitle: 'The full-size reference. Numpad, F-row and arrows, sized to the desk you already own.',
       buttonCaption: 'Ships in 3 days',
-      src: cdn('prologue-black_sesame-obsc-front.webp', 1200),
+      src: '/images/threek.webp',
     },
     {
       id: 'forty-series',
@@ -152,7 +152,7 @@ export const buildCta = {
   heading: 'Start Building',
   body: 'Select your layout, choose the finish and materials, and dial in the details for your ideal typing experience. Every board ships as a kit you can keep re-tuning.',
   cta: { label: 'Build yours', href: '#build' },
-  src: cdn('CMF_Chip-2.png', 2000),
+  src: '/images/startbuilding.webp',
   overlay: 50,
 }
 
@@ -183,8 +183,8 @@ export const editorial = {
       surface: 'transparent',
       kind: 'media',
       fit: 'cover',
-      src: cdn('encore-top-partial.png', 800),
-      alt: 'Machined case detail, bead-blasted finish',
+      src: '/images/keyshow.webp',
+      alt: 'Billet board, keyshow finish',
       transform: { desktop: 'translate(-13px, 0px)' },
       inset: {
         desktop: { w: 'calc(100%)', h: 'calc(100%)', l: '0px', t: '0px' },
@@ -212,8 +212,8 @@ export const editorial = {
       surface: 'transparent',
       kind: 'media',
       fit: 'contain',
-      src: cdn('encore-matcha_cream-lotus-side.webp', 800),
-      alt: 'A board held at an angle',
+      src: '/images/keydraw.webp',
+      alt: 'Billet board, keydraw angle',
       inset: {
         desktop: { w: 'calc(100% - 9px)', h: 'calc(100%)', l: '0px', t: '0px' },
         mobile: { w: 'calc(100%)', h: 'calc(100%)', l: '0px', t: '0px' },
@@ -256,13 +256,6 @@ export const tape = {
     src: cdn(communityShots[i % communityShots.length], 900),
     alt: `Community desk ${i + 1}`,
   })),
-}
-
-// The reference opens its community block with this wide team shot before the
-// marquee, so the tape section carries the same banner on top.
-export const communityBanner = {
-  src: cdn('team-adobe-max-wide.png', 2400),
-  alt: 'The Billet team at their workshop bench',
 }
 
 export const SWATCH_HEX = {
