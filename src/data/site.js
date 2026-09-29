@@ -13,8 +13,9 @@ export const brand = {
   year: 2026,
 }
 
-// Reference board renders mapped onto Billet names: Prologue = 98%, Sonnet =
-// 65%, Encore = 75%.
+// Reference board renders mapped onto Billet names: Prologue = 98%, Encore =
+// 75%, Sonnet = 65%. The trio is ordered 98 / 75 / 65 exactly as the
+// reference's featured collection lists Prologue, Encore and Sonnet.
 export const boards = [
   {
     id: 'overture',
@@ -33,22 +34,6 @@ export const boards = [
     colors: ['Graphite', 'Bone', 'Oxide', 'Verdigris'],
   },
   {
-    id: 'interlude',
-    name: 'Interlude',
-    layout: '65%',
-    stock: 'In stock — ships in 3 days',
-    blurb:
-      'Interlude is the shortest path to a clean desk. No numpad, no filler keys, nothing between you and the work.',
-    from: 289,
-    images: [
-      { src: cdn('sonnet-black_sesame-obsc-front.webp'), angle: 'Front' },
-      { src: cdn('sonnet-forest_mocha-cacao-front.webp'), angle: 'Side' },
-      { src: cdn('sonnet-golden_beige-mtry-front.webp'), angle: 'Front' },
-      { src: cdn('sonnet-studio_light-anth-front.webp'), angle: 'Side' },
-    ],
-    colors: ['Oxide', 'Slate', 'Chalk', 'Sand'],
-  },
-  {
     id: 'cadenza',
     name: 'Cadenza',
     layout: '75%',
@@ -63,6 +48,22 @@ export const boards = [
       { src: cdn('encore-monterey_dune-mtry-side.webp'), angle: 'Side' },
     ],
     colors: ['Slate', 'Verdigris', 'Graphite', 'Clay'],
+  },
+  {
+    id: 'interlude',
+    name: 'Interlude',
+    layout: '65%',
+    stock: 'In stock — ships in 3 days',
+    blurb:
+      'Interlude is the shortest path to a clean desk. No numpad, no filler keys, nothing between you and the work.',
+    from: 289,
+    images: [
+      { src: cdn('sonnet-black_sesame-obsc-front.webp'), angle: 'Front' },
+      { src: cdn('sonnet-forest_mocha-cacao-front.webp'), angle: 'Side' },
+      { src: cdn('sonnet-golden_beige-mtry-front.webp'), angle: 'Front' },
+      { src: cdn('sonnet-studio_light-anth-front.webp'), angle: 'Side' },
+    ],
+    colors: ['Oxide', 'Slate', 'Chalk', 'Sand'],
   },
 ]
 
@@ -97,19 +98,13 @@ export const categories = [
 ]
 
 // Center-stage carousel: square frame, three visible slides, giant typed
-// background text. Mirrors the reference's four-slot grid carousel.
+// background text. Mirrors the reference's four-slot grid carousel — the
+// reference leads with Sonnet (65%), then the 75%, the 98%, then the limited
+// run, so the Billet slides follow the same 65 / 75 / 98 / 40 order.
 export const carousel = {
   label: 'Our Keyboards',
   cta: { label: 'View all', href: '#categories' },
   slides: [
-    {
-      id: 'overture',
-      bgText: 'Overture',
-      title: 'Overture 98%',
-      subtitle: 'The full-size reference. Numpad, F-row and arrows, sized to the desk you already own.',
-      buttonCaption: 'Ships in 3 days',
-      src: cdn('prologue-lifestyle-desk-1.webp', 2000),
-    },
     {
       id: 'interlude',
       bgText: 'Interlude',
@@ -127,6 +122,14 @@ export const carousel = {
       src: cdn('encore-monterey_dune-mtry-front.webp', 1200),
     },
     {
+      id: 'overture',
+      bgText: 'Overture',
+      title: 'Overture 98%',
+      subtitle: 'The full-size reference. Numpad, F-row and arrows, sized to the desk you already own.',
+      buttonCaption: 'Ships in 3 days',
+      src: cdn('prologue-black_sesame-obsc-front.webp', 1200),
+    },
+    {
       id: 'forty-series',
       bgText: 'Series 40',
       title: 'The 40 Series',
@@ -141,7 +144,7 @@ export const team = {
   heading: 'Our Team',
   body: 'Twenty-two people in a converted machine shop in Sheffield. Machinists, two acoustic engineers, a firmware person, and the person who answers your support email.',
   cta: { label: 'Meet the workshop', href: '#team' },
-  src: cdn('team-adobe-max-wide.png', 2000),
+  src: cdn('our-team.png', 2000),
   overlay: 63,
 }
 
@@ -149,7 +152,7 @@ export const buildCta = {
   heading: 'Start Building',
   body: 'Select your layout, choose the finish and materials, and dial in the details for your ideal typing experience. Every board ships as a kit you can keep re-tuning.',
   cta: { label: 'Build yours', href: '#build' },
-  src: cdn('CMF_Engineering_Outline_3x_1.png', 2000),
+  src: cdn('CMF_Chip-2.png', 2000),
   overlay: 50,
 }
 
@@ -253,6 +256,13 @@ export const tape = {
     src: cdn(communityShots[i % communityShots.length], 900),
     alt: `Community desk ${i + 1}`,
   })),
+}
+
+// The reference opens its community block with this wide team shot before the
+// marquee, so the tape section carries the same banner on top.
+export const communityBanner = {
+  src: cdn('team-adobe-max-wide.png', 2400),
+  alt: 'The Billet team at their workshop bench',
 }
 
 export const SWATCH_HEX = {

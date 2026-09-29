@@ -1377,6 +1377,15 @@
   overflow: hidden;
 }
 
+.tape-banner {
+  position: relative;
+  width: min(100% - var(--pad-inline) * 2, var(--container));
+  margin-inline: auto;
+  margin-block: 2rem clamp(1.5rem, 3vw, 2.5rem);
+  overflow: hidden;
+  border-radius: var(--radius);
+}
+
 .tape-shell {
   width: 100%;
   max-width: var(--container);

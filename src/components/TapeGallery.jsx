@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { A11y, Autoplay } from 'swiper/modules'
 import 'swiper/css'
 import Slot from './Slot.jsx'
-import { tape } from '../data/site.js'
+import { tape, communityBanner } from '../data/site.js'
 
 /**
  * The reference drifts this row at a fixed pixel rate rather than a fixed
@@ -80,6 +80,10 @@ export default function TapeGallery() {
 
   return (
     <section id="community" className="section-tape" aria-label="Community gallery">
+      <div className="tape-banner">
+        <Slot src={communityBanner.src} alt={communityBanner.alt} ratio="16 / 9" />
+      </div>
+
       <div className="tape-shell" ref={shellRef}>
         <div
           className="tape-row"
