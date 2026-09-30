@@ -363,7 +363,10 @@
 
 @media (max-width: 1023px) {
   .utilities {
-    padding-right: clamp(1rem, 1.5vw, 1.5rem);
+    background: none;
+    padding: 0;
+    gap: clamp(1rem, 4.5vw, 1.5rem);
+    border-radius: 0;
   }
 }
 
@@ -388,12 +391,6 @@
 
 @media (min-width: 1024px) {
   .utilities__btn--mobile {
-    display: none;
-  }
-}
-
-@media (max-width: 1023px) {
-  .utilities__btn--desktop {
     display: none;
   }
 }
@@ -699,19 +696,29 @@
   background: var(--muted);
 }
 
-/* fade stacks every angle in the same frame */
-.card-gallery-swiper .swiper-slide {
+/* every angle stacks in the same frame; only the active one shows and it
+   never advances on its own */
+.card-gallery-swiper {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-gallery-slide {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s var(--ease-out);
 }
 
-.card-gallery-swiper .swiper-wrapper {
-  height: 100%;
+.card-gallery-slide.is-active {
+  opacity: 1;
+  pointer-events: auto;
 }
 
-.card-gallery-swiper .slot {
+.card-gallery-slide .slot {
   height: 100%;
 }
 
@@ -860,11 +867,19 @@
   }
 }
 
-/* Fixed width, three frames wide. Deliberately not max-width: on narrow
-   viewports the neighbours are clipped by the section rather than shrunk. */
+/* One frame wide on phones, three frames wide from tablet up. Never wider
+   than its container, so the auto margins can always centre it — a track
+   wider than the viewport would left-align and shove the active slide
+   sideways. */
 .stage-swiper {
-  width: calc(var(--frame) * 3);
+  width: var(--frame);
   margin-inline: auto;
+}
+
+@media (min-width: 768px) {
+  .stage-swiper {
+    width: min(calc(var(--frame) * 3), 100%);
+  }
 }
 
 /* Three visible states, mirroring the reference's slot machine:
@@ -1467,8 +1482,14 @@
 .media-frame {
   position: relative;
   width: 100%;
-  aspect-ratio: 5 / 3;
+  aspect-ratio: 1 / 1;
   background: var(--muted);
+}
+
+@media (min-width: 360px) and (max-width: 639px) {
+  .media-frame {
+    aspect-ratio: 5 / 4;
+  }
 }
 
 @media (min-width: 640px) {
@@ -1546,6 +1567,28 @@
   font-size: clamp(0.95rem, 1.1vw, 1.1rem);
   line-height: 1.5;
   text-wrap: pretty;
+}
+
+/* ---- band copy sized so nothing overflows the frame on small screens ---- */
+@media (max-width: 639px) {
+  .media-copy {
+    padding: clamp(1.25rem, 5vw, 1.5rem);
+  }
+  .media-copy-inner {
+    gap: 0.75rem;
+  }
+  .media-heading {
+    font-size: clamp(1.5rem, 6.5vw, 1.75rem);
+    line-height: 1.15;
+  }
+  .media-body {
+    font-size: 0.875rem;
+    line-height: 1.55;
+  }
+  .media-copy .btn {
+    padding-block: 0.625rem;
+    padding-inline: 1.25rem;
+  }
 }
 
 .section-media-center .media-copy .btn-pill,

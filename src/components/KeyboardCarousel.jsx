@@ -123,7 +123,7 @@ export default function KeyboardCarousel() {
               modules={[A11y, Autoplay, Keyboard]}
               onSwiper={setRef}
               onSlideChange={(swiper) => setActive(swiper.realIndex)}
-              slidesPerView={3}
+              slidesPerView={1}
               spaceBetween={0}
               centeredSlides
               loop
@@ -131,6 +131,7 @@ export default function KeyboardCarousel() {
               grabCursor
               keyboard={{ enabled: true }}
               autoplay={{ delay: 4500, disableOnInteraction: false }}
+              breakpoints={{ 768: { slidesPerView: 3 } }}
               className="stage-track"
             >
               {slides.map((item, index) => (
